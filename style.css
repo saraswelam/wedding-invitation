@@ -537,7 +537,7 @@ body {
   left: 50%;
   transform: translateX(-50%);
   white-space: nowrap;
-
+  z-index: 1000;
   font-family: 'Jost', sans-serif;
   font-weight: 500;
   font-size: clamp(14px, 3.5vw, 18px);
