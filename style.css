@@ -1,0 +1,921 @@
+/* ============================================================
+   Mahdy & Yomna — Save the Date
+   style.css  |  Teal & White Theme
+============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Cinzel:wght@400;500;600&family=Jost:wght@200;300;400;500;600&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --teal-primary: #669ba3;
+  --teal-deep: #0f2226;
+  --teal-mid: #1d454d;
+  --teal-soft: #669ba3;
+  --teal-pale: #d4e5e8;
+  --teal-mist: #eef5f6;
+  --teal-bg: #12363b;
+  --env-body: #669ba3;
+  --env-dark: #578c94;
+  --env-light: #78aab2;
+  --env-shadow: #427178;
+  --olive: #b5a832;
+  --red-accent: #c0392b;
+  --gold: #c9a84c;
+  --off-white: #f8fafa;
+  --white: #ffffff;
+  --text-body: #254044;
+  --noise-tex: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.25'/%3E%3C/svg%3E");
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+}
+
+body {
+  font-family: 'Libre Baskerville', serif;
+  letter-spacing: 0.04em;
+  line-height: 1.7;
+}
+
+/* smoother luxury text rendering */
+
+
+/* slightly more refined small text */
+.std-eyebrow,
+.std-location {
+  letter-spacing: 0.35em;
+}
+
+/* improve readability */
+.std-getting-married,
+.std-time {
+  font-size: clamp(17px, 3.8vw, 24px);
+}
+
+/* subtle elegance boost */
+.std-names {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+}
+
+/* ============================================================
+   SHARED
+============================================================ */
+.page {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  scroll-snap-align: start;
+  position: relative;
+  padding: 40px 20px;
+  overflow: hidden;
+}
+
+/* ============================================================
+   PAGE 1 — ENTRANCE
+============================================================ */
+#page-entrance {
+  background: #fdfaf4;
+  cursor: pointer;
+}
+
+.entrance-header {
+  margin-top: clamp(30px, 6vw, 60px);
+  padding: 0 20px;
+  text-align: center;
+  position: relative;
+  z-index: 10;
+  pointer-events: none;
+  animation: fadeInDown 1.5s ease forwards;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.floral-curtain-img {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+  opacity: 0.95;
+  pointer-events: none;
+  filter: drop-shadow(0 4px 10px rgba(0,0,0,0.1));
+  z-index: 5;
+}
+
+.entrance-header .tagline {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(16px, 3.5vw, 20px);
+  letter-spacing: 0.15em;
+  color: var(--teal-deep);
+  opacity: 0.9;
+  margin-bottom: 20px;
+  text-transform: lowercase;
+  font-style: italic;
+  font-weight: 300;
+}
+
+.entrance-header h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: clamp(42px, 9vw, 76px);
+  line-height: 1.1;
+  letter-spacing: 0.15em;
+  color: var(--teal-deep);
+  text-transform: uppercase;
+}
+
+.entrance-header h1 .amp-serif {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 0.9em;
+  padding: 0 8px;
+  opacity: 0.85;
+}
+
+/* ---- Envelope wrapper ---- */
+.envelope-scene {
+  position: relative;
+  width: min(500px, 90vw);
+  height: min(340px, 66vw);
+  perspective: 1000px;
+  z-index: 10;
+  margin: 25px 0 30px 0;
+}
+
+.envelope-body {
+  position: absolute;
+  inset: 0;
+  background: var(--noise-tex), var(--env-shadow);
+  background-blend-mode: overlay, normal;
+  border-radius: 2px;
+  box-shadow: 0 15px 40px rgba(18, 42, 62, 0.15);
+  z-index: 3;
+}
+
+.envelope-body::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--noise-tex), var(--env-dark);
+  background-blend-mode: overlay, normal;
+  clip-path: polygon(0 0, 0 100%, 50% 51.5%, 0 0, 100% 0, 50% 51.5%, 100% 100%, 100% 0);
+  z-index: 1;
+  border-radius: 2px;
+}
+
+.envelope-body::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--noise-tex), var(--env-body);
+  background-blend-mode: overlay, normal;
+  clip-path: polygon(0 100%, 100% 100%, 50% 51%);
+  z-index: 2;
+  filter: drop-shadow(0 -1px 1px rgba(255, 255, 255, 0.15));
+}
+
+.envelope-flap {
+  position: absolute;
+  inset: 0;
+  transform-origin: top center;
+  transform-style: preserve-3d;
+  transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 15;
+  filter: drop-shadow(0 4px 10px rgba(16, 38, 56, 0.4));
+}
+
+.envelope-flap::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--noise-tex), var(--env-light);
+  background-blend-mode: overlay, normal;
+  clip-path: polygon(0 0, 100% 0, 50% 54%);
+  border-radius: 2px 2px 0 0;
+  backface-visibility: hidden;
+}
+
+.envelope-flap::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--noise-tex), var(--env-light);
+  background-blend-mode: overlay, normal;
+  clip-path: polygon(0 0, 100% 0, 50% 54%);
+  border-radius: 2px 2px 0 0;
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
+}
+
+.wax-seal {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  background: radial-gradient(circle at 35% 30%, #f1e6d6, #d7c5ae);
+  border-radius: 50%;
+  left: 50%;
+  top: 53.5%;
+  transform: translate(-50%, -50%);
+  z-index: 16;
+  box-shadow:
+    0 4px 10px rgba(0, 0, 0, 0.15),
+    0 0 28px 6px rgba(255, 240, 210, 0.55),
+    inset 0 1px 2px rgba(255, 255, 255, 0.8),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 16px;
+  color: #ad9a7e;
+  font-weight: 500;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  letter-spacing: 0.05em;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.15), 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.envelope-contents {
+  position: absolute;
+  width: 100%;
+  bottom: 55%;
+  left: 0;
+  z-index: 20;
+  pointer-events: none;
+  overflow: visible;
+}
+
+/* ---- Save the Date card ---- */
+.card-std {
+  position: absolute;
+  width: 52%;
+  aspect-ratio: 5 / 4;
+  background: #fdfaf4;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 24%;
+  bottom: 0;
+  transform: translateY(120%) rotate(-6deg);
+  opacity: 0;
+  transition:
+    transform 0.8s cubic-bezier(0.34, 1.45, 0.64, 1) 0.2s,
+    opacity 0.4s ease 0.2s;
+  box-shadow: 0 8px 24px rgba(16, 38, 56, 0.2);
+  z-index: 1;
+}
+
+.card-std-inner {
+  border: 1px solid #d1bd9f;
+  margin: 10px;
+  width: calc(100% - 20px);
+  height: calc(100% - 20px);
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: transparent;
+}
+
+.card-std h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(14px, 3.5vw, 18px);
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  color: #0c1c2a;
+  line-height: 1.7;
+}
+
+/* ---- Elegant Date Tag ---- */
+.card-date {
+  position: absolute;
+  width: auto;
+  padding: 7px 14px 5px;
+  background: #fdfaf4;
+  border-radius: 2px;
+  right: 8%;
+  bottom: 0;
+  transform: translateY(120%) rotate(14deg);
+  opacity: 0;
+  transition:
+    transform 0.8s cubic-bezier(0.34, 1.45, 0.64, 1) 0.35s,
+    opacity 0.4s ease 0.35s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(18, 42, 62, 0.15);
+  border: 1px solid #d1bd9f;
+  z-index: 2;
+}
+
+.card-date span {
+  font-family: 'Jost', sans-serif;
+  font-size: clamp(10px, 2.5vw, 13px);
+  font-weight: 600;
+  color: #122a3e;
+  letter-spacing: 0.12em;
+  white-space: nowrap;
+}
+
+/* ---- Polaroids ---- */
+.photo {
+  position: absolute;
+  background: white;
+  padding: 5px 5px 20px;
+  box-shadow: 0 6px 22px rgba(18, 42, 62, 0.18);
+  opacity: 0;
+  transition-property: transform, opacity;
+  transition-timing-function: cubic-bezier(0.34, 1.45, 0.64, 1);
+  z-index: 5;
+  /* Ensure photos pop over the main card */
+}
+
+.photo-inner {
+  width: 100%;
+  height: calc(100% - 22px);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #c2bdb7;
+  font-family: 'Jost', sans-serif;
+  font-size: 8px;
+  color: #999;
+  letter-spacing: 0.06em;
+  text-align: center;
+  font-weight: 300;
+}
+
+.photo-inner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.photo-1 {
+  width: clamp(115px, 32vw, 170px);
+  height: clamp(138px, 38vw, 204px);
+  bottom: 10px;
+  left: 8%;
+  transform: translateY(120%) rotate(-10deg);
+  transition-duration: 0.8s;
+  transition-delay: 0.48s;
+}
+
+.photo-2 {
+  width: clamp(120px, 34vw, 180px);
+  height: clamp(144px, 40vw, 216px);
+  bottom: 20px;
+  right: 8%;
+  left: auto;
+  transform: translateY(120%) rotate(5deg);
+  transition-duration: 0.8s;
+  transition-delay: 0.60s;
+}
+
+.photo-3 {
+  width: clamp(105px, 30vw, 160px);
+  height: clamp(126px, 36vw, 192px);
+  bottom: 10px;
+  left: 30%;
+  transform: translateY(120%) rotate(2deg);
+  transition-duration: 0.8s;
+  transition-delay: 0.52s;
+  z-index: 6;
+  /* Pops perfectly in front of the bottom center of the main card */
+}
+
+/* ---- Botanicals (SVG-based) ---- */
+.botanical {
+  position: absolute;
+  opacity: 0;
+  user-select: none;
+  pointer-events: none;
+  line-height: 1;
+  transition-property: opacity, transform;
+  transition-timing-function: cubic-bezier(0.34, 1.3, 0.64, 1);
+}
+
+.botanical svg {
+  display: block;
+}
+
+.bot-eucalyptus {
+  top: -110px;
+  right: -14px;
+  width: clamp(36px, 9vw, 52px);
+  transform: translateY(20px) rotate(20deg);
+  transition-duration: 0.7s;
+  transition-delay: 0.65s;
+}
+
+.bot-rose {
+  top: -72px;
+  left: 2%;
+  width: clamp(28px, 7vw, 42px);
+  transform: translateY(20px) rotate(-14deg);
+  transition-duration: 0.7s;
+  transition-delay: 0.72s;
+}
+
+.bot-leaf {
+  top: -28px;
+  left: 40%;
+  width: clamp(14px, 3.5vw, 20px);
+  transform: translateY(16px) rotate(-20deg);
+  transition-duration: 0.6s;
+  transition-delay: 0.85s;
+}
+
+.bot-daisies {
+  top: 8px;
+  left: -5%;
+  width: clamp(120px, 32vw, 180px);
+  transform: translateY(12px);
+  transition-duration: 0.7s;
+  transition-delay: 0.78s;
+}
+
+.bot-chamomile {
+  top: 4px;
+  right: -3%;
+  width: clamp(80px, 22vw, 120px);
+  transform: translateY(12px) rotate(8deg);
+  transition-duration: 0.65s;
+  transition-delay: 0.88s;
+}
+
+/* ============================================================
+   OPENED STATE
+============================================================ */
+.envelope-scene.opened .envelope-flap {
+  transform: rotateX(-180deg);
+}
+
+.envelope-scene.opened .wax-seal {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.7);
+}
+
+.envelope-scene.opened .card-std {
+  transform: translateY(-50%) rotate(-2deg);
+  /* Lift text up slightly to clear bottom photo */
+  opacity: 1;
+}
+
+.envelope-scene.opened .card-date {
+  transform: translate(20%, -30%) rotate(10deg);
+  opacity: 1;
+}
+
+.envelope-scene.opened .photo-1 {
+  transform: translate(-45%, -95%) rotate(-18deg);
+  /* Fan out harder left */
+  opacity: 1;
+}
+
+.envelope-scene.opened .photo-2 {
+  transform: translate(45%, -85%) rotate(12deg);
+  /* Fan out harder right */
+  opacity: 1;
+}
+
+.envelope-scene.opened .photo-3 {
+  transform: translate(-10%, 45%) rotate(-6deg);
+  /* Pushed significantly lower to clear 'THE DATE' */
+  opacity: 1;
+}
+
+.envelope-scene.opened .botanical {
+  opacity: 1;
+}
+
+.envelope-scene.opened .bot-eucalyptus {
+  transform: translateY(0) rotate(20deg);
+}
+
+.envelope-scene.opened .bot-rose {
+  transform: translateY(0) rotate(-14deg);
+}
+
+.envelope-scene.opened .bot-leaf {
+  transform: translateY(0) rotate(-20deg);
+}
+
+.envelope-scene.opened .bot-daisies {
+  transform: translateY(0);
+}
+
+.envelope-scene.opened .bot-chamomile {
+  transform: translateY(0) rotate(8deg);
+}
+
+/* Click label */
+.click-label {
+  margin-top: 30px;
+  font-family: 'Jost', sans-serif;
+  font-weight: 500;
+  font-size: clamp(14px, 3.5vw, 18px);
+  letter-spacing: 0.08em;
+  color: #122a3e;
+  opacity: 1;
+  position: relative;
+  z-index: 2;
+  transition: opacity 0.4s, visibility 0.4s;
+  text-transform: uppercase;
+}
+
+.click-label.hidden {
+  opacity: 0 !important;
+  visibility: hidden;
+}
+
+/* Scroll hint */
+.scroll-hint {
+  position: absolute;
+  bottom: 5vh;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  opacity: 1;
+  animation: bounceHint 2.5s ease-in-out infinite;
+  z-index: 2;
+}
+
+.scroll-hint span {
+  font-family: 'Jost', sans-serif;
+  font-weight: 500;
+  font-size: clamp(13px, 3.2vw, 16px);
+  letter-spacing: 0.08em;
+  color: var(--teal-deep);
+}
+
+@keyframes bounceHint {
+
+  0%,
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+
+  50% {
+    transform: translateX(-50%) translateY(5px);
+  }
+}
+
+/* ============================================================
+   PAGE 2 — SAVE THE DATE
+============================================================ */
+#page-save {
+  background: var(--teal-bg);
+  text-align: center;
+  overflow: hidden;
+  gap: 0;
+}
+
+#page-save::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 20% 20%, rgba(74, 144, 144, 0.25) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 80%, rgba(26, 74, 74, 0.4) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.aya {
+  font-family: 'Amiri', serif;
+  font-size: clamp(16px, 4vw, 20px);
+  font-weight: 600;
+  color: var(--teal-deep);
+  text-align: center;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.std-card {
+  position: relative;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.97);
+  border-radius: 2px;
+  padding: clamp(36px, 8vw, 60px) clamp(32px, 7vw, 72px);
+  max-width: min(480px, 88vw);
+  width: 100%;
+  box-shadow:
+    0 24px 80px rgba(0, 0, 0, 0.3),
+    0 0 0 1px rgba(255, 255, 255, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+.std-card::before {
+  content: '';
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  right: 14px;
+  bottom: 14px;
+  border: 1px solid var(--gold);
+  opacity: 0.6;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.std-rule {
+  width: 80px;
+  height: 2px;
+  background: var(--gold);
+  opacity: 0.8;
+  margin: 20px auto;
+}
+
+.std-rule.wide {
+  width: 100px;
+  margin: 20px auto;
+}
+
+.std-floral {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.85;
+  user-select: none;
+  margin: 4px 0;
+}
+
+.monogram {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 1.5px solid var(--teal-mid);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Cinzel', serif;
+  font-size: 12px;
+  color: var(--teal-mid);
+  letter-spacing: 0.04em;
+  margin-bottom: 20px;
+}
+
+.std-eyebrow {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(14px, 3vw, 18px);
+  letter-spacing: 0.15em;
+  color: var(--teal-deep);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.std-names {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(42px, 9vw, 56px);
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--teal-deep);
+  line-height: 1.15;
+  margin-bottom: 12px;
+}
+
+.std-names .amp-ornate {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1em;
+  font-style: italic;
+  font-weight: 300;
+  color: var(--teal-deep);
+  padding: 0 6px;
+}
+
+.std-getting-married {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: clamp(16px, 3.8vw, 24px);
+  font-weight: 300;
+  color: var(--teal-mid);
+  text-transform: lowercase;
+  letter-spacing: 0.08em;
+  margin-top: 5px;
+}
+
+.std-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.std-location {
+  font-family: 'Lora', serif;
+  font-size: clamp(12px, 2.8vw, 15px);
+  letter-spacing: 0.05em;
+  color: var(--teal-deep);
+  text-transform: uppercase;
+  font-weight: 400;
+  margin-bottom: 24px;
+}
+
+.location-wrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  justify-content: center;
+}
+
+.location-icon {
+  width: 1.1em;
+  height: 1.1em;
+  opacity: 0.85;
+}
+
+.std-date {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(24px, 5.5vw, 32px);
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  color: var(--teal-deep);
+  margin-bottom: 4px;
+}
+
+.std-time {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: normal;
+  font-size: clamp(20px, 4.5vw, 28px);
+  font-weight: 500;
+  color: var(--teal-deep);
+  letter-spacing: 0.02em;
+  margin-bottom: 20px;
+}
+
+.std-formal {
+  font-family: 'Lora', serif;
+  font-weight: 400;
+  font-size: clamp(11px, 2.5vw, 13px);
+  color: var(--teal-mid);
+  opacity: 0.9;
+  line-height: 1.6;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.std-location a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid var(--teal-deep);
+  padding-bottom: 2px;
+}
+
+
+/* ============================================================
+   NAV DOTS
+============================================================ */
+.nav-dots {
+  position: fixed;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 200;
+}
+
+.nav-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--teal-mid);
+  opacity: 0.28;
+  cursor: pointer;
+  transition: opacity 0.3s, transform 0.3s;
+  border: none;
+  padding: 0;
+}
+
+.nav-dot.active {
+  opacity: 0.85;
+  transform: scale(1.5);
+}
+
+/* ============================================================
+   RESPONSIVE
+============================================================ */
+@media (max-width: 480px) {
+  .envelope-scene.opened .card-std {
+    transform: translateY(-45%) rotate(-2deg);
+  }
+
+  .envelope-scene.opened .card-date {
+    transform: translate(15%, -20%) rotate(10deg);
+  }
+
+  .envelope-scene.opened .photo-1 {
+    transform: translate(-30%, -85%) rotate(-16deg);
+  }
+
+  .envelope-scene.opened .photo-2 {
+    transform: translate(30%, -75%) rotate(10deg);
+  }
+
+  .envelope-scene.opened .photo-3 {
+    transform: translate(-10%, 35%) rotate(-4deg);
+  }
+
+  /* Sit nicely below text */
+
+  .std-card {
+    padding: 32px 24px;
+  }
+}
+
+@media (min-width: 768px) {
+  .envelope-scene.opened .card-std {
+    transform: translateY(-55%) rotate(-2deg);
+  }
+
+  .envelope-scene.opened .card-date {
+    transform: translate(35%, -35%) rotate(10deg);
+  }
+
+  .envelope-scene.opened .photo-1 {
+    transform: translate(-65%, -105%) rotate(-18deg);
+  }
+
+  .envelope-scene.opened .photo-2 {
+    transform: translate(60%, -100%) rotate(12deg);
+  }
+
+  .envelope-scene.opened .photo-3 {
+    transform: translate(-5%, 45%) rotate(-6deg);
+  }
+}
+
+.std-location a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(26, 74, 74, 0.25);
+  padding-bottom: 2px;
+  transition: all 0.3s ease;
+}
+
+.std-location a:hover {
+  color: var(--teal-soft);
+  border-bottom-color: var(--teal-soft);
+}
+
+.aya {
+  font-family: 'Amiri', serif;
+  direction: rtl;
+  text-align: center;
+
+  font-size: clamp(14px, 3vw, 20px);
+  /* slightly larger */
+  line-height: 1.8;
+
+  color: var(--teal-deep);
+  opacity: 0.85;
+
+  margin-bottom: 18px;
+  padding: 0 10px;
+}
+
+.location-wrapper {
+  display: inline-flex;
+  align-items: center;
+  /* THIS is the key fix */
+  gap: 8px;
+}
+
+.location-icon {
+  width: 14px;
+  height: 14px;
+  opacity: 0.7;
+
+  /* FIX vertical misalignment */
+  transform: translateY(-2px);
+}
