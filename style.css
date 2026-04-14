@@ -530,19 +530,24 @@ body {
   transform: translateY(0) rotate(8deg);
 }
 
-/* Click label */
+/* Click label — sits above the scroll hint, no overlap */
 .click-label {
-  margin-top: 30px;
+  position: absolute;
+  bottom: calc(5vh + 80px); /* sits ~80px above the scroll hint */
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+
   font-family: 'Jost', sans-serif;
   font-weight: 500;
   font-size: clamp(14px, 3.5vw, 18px);
   letter-spacing: 0.08em;
   color: #122a3e;
   opacity: 1;
-  position: relative;
   z-index: 2;
   transition: opacity 0.4s, visibility 0.4s;
   text-transform: uppercase;
+  margin-top: 0; /* remove old margin-top */
 }
 
 .click-label.hidden {
