@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>كتب كتاب مهدي ويمنى</title>
+
+  <!-- Updated fonts (minimal luxury + Arabic) -->
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Great+Vibes&family=Lora:ital,wght@0,400;1,400&family=Cinzel:wght@400;500&family=Amiri:wght@400;700&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="../style.css">
+
+  <style>
+    .entrance-header .tagline,
+    .entrance-header h1,
+    .card-std h2,
+    .click-label,
+    .scroll-hint span,
+    .std-eyebrow,
+    .std-names,
+    .std-date,
+    .std-time,
+    .std-location,
+    .std-formal {
+      font-family: 'Amiri', serif;
+      letter-spacing: 0;
+    }
+
+    .std-names-line {
+      white-space: nowrap;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Nav dots -->
+
+  <nav class="nav-dots" aria-label="التنقل بين الصفحات">
+    <button class="nav-dot active" onclick="scrollToPage(0)" aria-label="الافتتاح"></button>
+    <button class="nav-dot" onclick="scrollToPage(1)" aria-label="تفاصيل كتب الكتاب"></button>
+  </nav>
+
+  <!-- ============================================================
+       PAGE 1 - ENTRANCE (envelope)
+  ============================================================ -->
+
+  <section class="page" id="page-entrance" onclick="toggleEnvelope()" aria-label="اضغط لفتح الدعوة">
+
+    <!-- Floral Curtain Top -->
+    <img src="../assets/ward.png" alt="ستارة ورد" class="floral-curtain-img">
+
+    <!-- Header -->
+    <div class="entrance-header">
+      <p class="tagline">مع عائلتيهما</p>
+      <h1>مهدي<br>ويمنى</h1>
+    </div>
+
+    <!-- Envelope scene -->
+    <div class="envelope-scene" id="envelopeScene">
+
+      <div class="envelope-contents">
+
+        <!-- POLAROID 1 -->
+        <div class="photo photo-1">
+          <div class="photo-inner">
+            <img src="../assets/Children_kayoot.png?q=80&w=400&h=500&auto=format&fit=crop" alt="صورة العروسين 1">
+          </div>
+        </div>
+
+        <!-- POLAROID 2 -->
+        <div class="photo photo-2">
+          <div class="photo-inner">
+            <img src="../assets/khotoba.jpg?q=80&w=400&h=500&auto=format&fit=crop" alt="صورة العروسين 2">
+          </div>
+        </div>
+
+        <!-- POLAROID 3 -->
+        <div class="photo photo-3">
+          <div class="photo-inner">
+            <img src="../assets/Ew3a_eldebal.jpg" alt="صورة العروسين 3">
+          </div>
+        </div>
+
+        <!-- Save the Date card (Or Main Photo) -->
+        <div class="card-std">
+          <div class="card-std-inner">
+            <h2>احفظوا<br>هذا<br>التاريخ</h2>
+          </div>
+        </div>
+
+        <!-- Date -->
+        <div class="card-date">
+          <span>١١.٠٧.٢٠٢٦</span>
+        </div>
+
+      </div>
+
+      <!-- Envelope -->
+      <div class="envelope-body">
+        <div class="envelope-flap"></div>
+        <div class="wax-seal">م&amp;ي</div>
+      </div>
+
+    </div>
+
+    <p class="click-label" id="clickLabel">اضغط للفتح</p>
+
+    <div class="scroll-hint" id="scrollHint" style="display: none;">
+      <svg width="24" height="44" viewBox="0 0 24 44" fill="none" stroke="#122a3e" stroke-width="1.2">
+        <path d="M12 2v38M4 32l8 8 8-8" />
+      </svg>
+      <span>مرر</span>
+    </div>
+
+  </section>
+
+  <!-- ============================================================
+       PAGE 2 - SAVE THE DATE
+  ============================================================ -->
+
+  <section class="page" id="page-save" aria-label="تفاصيل كتب الكتاب">
+
+    <div class="std-card">
+
+      <p class="aya">
+        وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا
+        لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً
+      </p>
+
+      <p class="std-eyebrow">احفظوا التاريخ</p>
+
+      <h2 class="std-names">
+        <span class="std-names-line">مهدي ويمنى</span>
+        <span class="std-event-line">كتب الكتاب</span>
+      </h2>
+
+      <div class="std-rule"></div>
+
+      <div class="std-details">
+        <p class="std-date">١١ &middot; ٠٧ &middot; ٢٠٢٦</p>
+        <p class="std-time">٦:٠٠ مساءً</p>
+
+        <p class="std-location">
+          <span class="location-wrapper">
+            <svg class="location-icon" viewBox="0 0 24 24" fill="none">
+              <path d="M12 21s-6-5.33-6-10a6 6 0 1 1 12 0c0 4.67-6 10-6 10z" stroke="currentColor" stroke-width="1.4" />
+              <circle cx="12" cy="11" r="2.5" stroke="currentColor" stroke-width="1.4" />
+            </svg>
+            <a href="https://maps.app.goo.gl/ApADEErN73M9nTUc7" target="_blank">
+              مسجد الحافظ
+            </a>
+          </span>
+          <br>
+          <span class="hall-name"
+            style="font-size: 0.85em; text-transform:none; font-family: 'Amiri', serif; letter-spacing: 0;">قاعة السلام</span>
+        </p>
+
+      </div>
+
+      <p class="std-formal">
+        احترامًا لحرمة المسجد، نرجو الالتزام بملابس محتشمة تليق بمكان العبادة.
+      </p>
+    </div>
+
+  </section>
+
+  <audio id="bg-music" src="../zaghrota.mp3"></audio>
+
+  <script src="../script.js"></script>
+</body>
+
+</html>

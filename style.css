@@ -83,6 +83,10 @@ body {
   overflow: hidden;
 }
 
+#page-save {
+  overflow: hidden;
+}
+
 /* ============================================================
    PAGE 1 — ENTRANCE
 ============================================================ */
@@ -114,7 +118,7 @@ body {
   height: auto;
   opacity: 0.95;
   pointer-events: none;
-  filter: drop-shadow(0 4px 10px rgba(0,0,0,0.1));
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.1));
   z-index: 5;
 }
 
@@ -305,6 +309,17 @@ body {
   line-height: 1.7;
 }
 
+.card-invite-text {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: clamp(9.5px, 2.25vw, 13px);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  line-height: 1.35;
+  color: #0c1c2a;
+  max-width: 90%;
+}
+
 /* ---- Elegant Date Tag ---- */
 .card-date {
   position: absolute;
@@ -478,8 +493,7 @@ body {
 }
 
 .envelope-scene.opened .card-std {
-  transform: translateY(-50%) rotate(-2deg);
-  /* Lift text up slightly to clear bottom photo */
+  transform: translateY(-42%) rotate(-2deg);
   opacity: 1;
 }
 
@@ -501,8 +515,7 @@ body {
 }
 
 .envelope-scene.opened .photo-3 {
-  transform: translate(-10%, 45%) rotate(-6deg);
-  /* Pushed significantly lower to clear 'THE DATE' */
+  transform: translate(-10%, 68%) rotate(-6deg);
   opacity: 1;
 }
 
@@ -533,7 +546,8 @@ body {
 /* Click label — sits above the scroll hint, no overlap */
 .click-label {
   position: absolute;
-  bottom: calc(5vh + 80px); /* sits ~80px above the scroll hint */
+  bottom: calc(5vh + 80px);
+  /* sits ~80px above the scroll hint */
   left: 50%;
   transform: translateX(-50%);
   white-space: nowrap;
@@ -547,7 +561,8 @@ body {
   z-index: 2;
   transition: opacity 0.4s, visibility 0.4s;
   text-transform: uppercase;
-  margin-top: 0; /* remove old margin-top */
+  margin-top: 0;
+  /* remove old margin-top */
 }
 
 .click-label.hidden {
@@ -594,10 +609,13 @@ body {
    PAGE 2 — SAVE THE DATE
 ============================================================ */
 #page-save {
-  background: var(--teal-bg);
+  background:
+    radial-gradient(ellipse at 20% 20%, rgba(255, 255, 255, 0.12) 0%, transparent 58%),
+    linear-gradient(135deg, #7bb1b8 0%, #5c98a1 52%, #4c858e 100%);
   text-align: center;
   overflow: hidden;
   gap: 0;
+  padding: 0;
 }
 
 #page-save::before {
@@ -620,21 +638,37 @@ body {
   margin-bottom: 30px;
 }
 
+/* ============================================================
+   SAVE THE DATE CARD
+============================================================ */
+
 .std-card {
   position: relative;
   z-index: 1;
-  background: rgba(255, 255, 255, 0.97);
-  border-radius: 2px;
-  padding: clamp(36px, 8vw, 60px) clamp(32px, 7vw, 72px);
-  max-width: min(480px, 88vw);
+
+  overflow: hidden;
+
+  background: url('assets/template.jpg') center/cover no-repeat;
+  border-radius: 0;
+
+  padding: clamp(36px, 8vw, 60px) clamp(20px, 4vw, 40px);
+
+  max-width: 100%;
   width: 100%;
-  box-shadow:
-    0 24px 80px rgba(0, 0, 0, 0.3),
-    0 0 0 1px rgba(255, 255, 255, 0.08);
+  min-height: 100svh;
+
+  box-shadow: none;
+
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 0;
+}
+
+.std-card>* {
+  position: relative;
+  z-index: 2;
 }
 
 .std-card::before {
@@ -644,7 +678,7 @@ body {
   left: 14px;
   right: 14px;
   bottom: 14px;
-  border: 1px solid var(--gold);
+  /* border: 1px solid var(--gold); */
   opacity: 0.6;
   pointer-events: none;
   z-index: 10;
@@ -698,13 +732,27 @@ body {
 
 .std-names {
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(42px, 9vw, 56px);
+  font-size: clamp(32px, 8vw, 50px);
   font-weight: 400;
   text-transform: none;
   letter-spacing: 0;
   color: var(--teal-deep);
   line-height: 1.15;
   margin-bottom: 12px;
+}
+
+.std-names-line,
+.std-event-line {
+  display: block;
+}
+
+.std-names-line {
+  white-space: nowrap;
+}
+
+.std-event-line {
+  font-size: 0.82em;
+  margin-top: 4px;
 }
 
 .std-names .amp-ornate {
@@ -781,7 +829,8 @@ body {
   font-family: 'Lora', serif;
   font-weight: 400;
   font-size: clamp(11px, 2.5vw, 13px);
-  color: var(--teal-mid);
+  color: black;
+  /*var(--teal-mid);*/
   opacity: 0.9;
   line-height: 1.6;
   max-width: 90%;
@@ -832,7 +881,7 @@ body {
 ============================================================ */
 @media (max-width: 480px) {
   .envelope-scene.opened .card-std {
-    transform: translateY(-45%) rotate(-2deg);
+    transform: translateY(-36%) rotate(-2deg);
   }
 
   .envelope-scene.opened .card-date {
@@ -848,7 +897,7 @@ body {
   }
 
   .envelope-scene.opened .photo-3 {
-    transform: translate(-10%, 35%) rotate(-4deg);
+    transform: translate(-10%, 62%) rotate(-4deg);
   }
 
   /* Sit nicely below text */
@@ -860,7 +909,7 @@ body {
 
 @media (min-width: 768px) {
   .envelope-scene.opened .card-std {
-    transform: translateY(-55%) rotate(-2deg);
+    transform: translateY(-46%) rotate(-2deg);
   }
 
   .envelope-scene.opened .card-date {
@@ -876,7 +925,7 @@ body {
   }
 
   .envelope-scene.opened .photo-3 {
-    transform: translate(-5%, 45%) rotate(-6deg);
+    transform: translate(-5%, 72%) rotate(-6deg);
   }
 }
 
