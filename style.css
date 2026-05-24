@@ -656,8 +656,8 @@ body {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse at 20% 20%, rgba(74, 144, 144, 0.25) 0%, transparent 60%),
-    radial-gradient(ellipse at 80% 80%, rgba(26, 74, 74, 0.4) 0%, transparent 60%);
+    radial-gradient(ellipse at 20% 20%, rgba(74, 144, 144, 0.15) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 80%, rgba(26, 74, 74, 0.2) 0%, transparent 60%);
   pointer-events: none;
 }
 
@@ -669,7 +669,7 @@ body {
   text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 4px rgba(255, 255, 255, 0.9);
   text-align: center;
   line-height: 1.6;
-  margin-bottom: 12px;
+  margin-bottom: 24px;
 }
 
 /* ============================================================
@@ -682,7 +682,8 @@ body {
 
   overflow: hidden;
 
-  background: url('assets/background.jpg') center/100% 100% no-repeat;
+  /* Fade background by 10% using a semi-transparent overlay */
+  background: linear-gradient(rgba(253, 250, 244, 0.1), rgba(253, 250, 244, 0.1)), url('assets/background.jpg') center/100% 100% no-repeat;
   border-radius: 4px;
 
   padding: clamp(36px, 8vw, 60px) clamp(20px, 4vw, 40px);
@@ -841,8 +842,13 @@ body {
   letter-spacing: 0.05em;
   color: var(--teal-deep);
   text-transform: uppercase;
-  font-weight: 400;
+  font-weight: 600;
   margin-bottom: 12px;
+}
+
+.std-location a {
+  text-decoration: none;
+  color: inherit;
 }
 
 .location-wrapper {
@@ -888,13 +894,7 @@ body {
   line-height: 1.6;
   max-width: 90%;
   margin: 0 auto;
-}
-
-.std-location a {
-  color: inherit;
-  text-decoration: none;
-  border-bottom: 1px solid var(--teal-deep);
-  padding-bottom: 2px;
+  margin-bottom: 16px;
 }
 
 
