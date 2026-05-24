@@ -3,6 +3,8 @@ let envelopeOpened = false;
 // 🎵 get audio element once
 const music = document.getElementById('bg-music');
 
+let redirectTimer;
+
 /**
  * Toggles the envelope open/closed on each click.
  */
@@ -27,6 +29,11 @@ function toggleEnvelope() {
     // Show scroll hint after animation settles
     setTimeout(() => {
       scrollHint.style.display = 'flex';
+
+      redirectTimer = setTimeout(() => {
+        scrollToPage(1);
+      }, 5000);
+
     }, 1400);
 
   } else {
@@ -36,6 +43,9 @@ function toggleEnvelope() {
     label.textContent = 'CLICK TO OPEN';
     label.classList.remove('hidden');
     scrollHint.style.display = 'none';
+    
+    // Clear timer if they close it early
+    clearTimeout(redirectTimer);
 
     // 🎵 optional: pause when closing
     if (music) {
