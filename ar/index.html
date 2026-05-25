@@ -38,7 +38,7 @@
     <!-- Header -->
     <div class="entrance-header">
       <p class="tagline">عقد قران</p>
-      <h1>مهدي <span class="amp-serif">و</span><br>يمنى</h1>
+      <h1>مهدي<br><span class="amp-serif">و</span><br>يمنى</h1>
     </div>
 
     <!-- Envelope scene -->
@@ -91,12 +91,10 @@
       <!-- Envelope -->
       <div class="envelope-body">
         <div class="envelope-flap"></div>
-        <div class="wax-seal" style="font-family: 'Aref Ruqaa', 'Amiri', serif; font-size: 18px;">م ي</div>
+        <div class="wax-seal">م&amp;ي</div>
       </div>
 
     </div>
-
-    <div class="confetti-container" id="confettiContainer" aria-hidden="true"></div>
 
     <p class="click-label" id="clickLabel">اضغط للفتح</p>
 
@@ -116,44 +114,47 @@
   <section class="page" id="page-save" aria-label="تفاصيل احفظوا التاريخ">
 
     <div class="std-card">
-      <div class="aya">
-        وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم<br>
-        مَّوَدَّةً وَرَحْمَةً
-      </div>
+
+      <p class="aya">
+        وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا
+        لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً
+      </p>
+
       <p class="std-eyebrow">احفظوا التاريخ</p>
+
       <h2 class="std-names">
         <span class="std-names-line">مهدي</span>
-        <span class="std-names-line"><span class="amp-ornate">و</span> يمنى</span>
-      </h2>
-      <div class="std-datetime">
-        <span class="std-date" style="font-family: 'Amiri', serif;">١١ &middot; ٧ &middot; ٢٠٢٦</span>
-        <span class="std-separator">|</span>
-        <span class="std-time" style="font-family: 'Amiri', serif;">٦:٠٠ مساءً</span>
-      </div>
-      <div class="venue-block">
-        <a href="https://maps.app.goo.gl/ApADEErN73M9nTUc7" target="_blank" rel="noopener" class="mosque-title" style="font-family: 'Amiri', serif; letter-spacing: 0;">
-          مسجد الحافظ
-          <svg class="pin-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z" fill="currentColor"/></svg>
-        </a>
-        <span class="hall-name" style="font-family: 'Amiri', serif; letter-spacing: 0;">قاعة السلام</span>
-      </div>
-      <p class="std-formal" style="font-family: 'Amiri', serif;">
-        احتراما لقدسية المسجد، يرجى الالتزام بالملابس المحتشمة.
-      </p>
-    </div>
+        <span class="amp-ornate">و</span>
+        <span class="std-names-line">يمنى</span>
 
-    <div class="wedding-extras">
-      <div class="countdown" aria-live="polite" aria-label="الوقت المتبقي حتى الزفاف">
-        <div class="cd-unit"><span class="cd-num" id="cd-days">--</span><span class="cd-label">يوم</span></div>
-        <div class="cd-sep">·</div>
-        <div class="cd-unit"><span class="cd-num" id="cd-hours">--</span><span class="cd-label">ساعة</span></div>
-        <div class="cd-sep">·</div>
-        <div class="cd-unit"><span class="cd-num" id="cd-minutes">--</span><span class="cd-label">دقيقة</span></div>
+      </h2>
+
+      <div class="std-rule"></div>
+
+      <div class="std-details">
+        <p class="std-date">١١ &middot; ٧ &middot; ٢٠٢٦</p>
+        <p class="std-time">٦:٠٠ مساءً</p>
+
+        <p class="std-location">
+          <span class="location-wrapper">
+            <!-- Pin icon -->
+            <svg class="location-icon" viewBox="0 0 24 24" fill="none">
+              <path d="M12 21s-6-5.33-6-10a6 6 0 1 1 12 0c0 4.67-6 10-6 10z" stroke="currentColor" stroke-width="1.4" />
+              <circle cx="12" cy="11" r="2.5" stroke="currentColor" stroke-width="1.4" />
+            </svg>
+            <a href="https://maps.app.goo.gl/ApADEErN73M9nTUc7" target="_blank">
+              مسجد الحافظ
+            </a>
+          </span>
+          <br>
+          <span class="hall-name"
+            style="font-size: 0.85em; text-transform:none; font-family: 'Lora', serif; letter-spacing: 0;">قاعة
+            السلام</span>
+        </p>
+
       </div>
-      <a class="directions-btn" href="https://maps.app.goo.gl/ApADEErN73M9nTUc7" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z" fill="currentColor"/></svg>
-        الاتجاهات
-      </a>
+
+
     </div>
 
   </section>
@@ -164,5 +165,3 @@
 </body>
 
 </html>
-
-

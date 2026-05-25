@@ -23,21 +23,30 @@ function toggleEnvelope() {
     label.textContent = 'TAP TO CLOSE';
     label.classList.remove('hidden');
 
-    // 🎵 play music: 6s from start, then jump to last 2s, then stop (audio + petals)
+    // 🎵 play music: last 8s only
     if (music) {
       music.volume = 0.35;
-      music.currentTime = 0;
-      music.play().catch(() => { });
-      clearTimeout(musicStopTimer);
-      musicStopTimer = setTimeout(() => {
-        if (music.duration && isFinite(music.duration) && music.duration > 2) {
-          music.currentTime = Math.max(0, music.duration - 2);
+      
+      const playLast8s = () => {
+        if (music.duration && isFinite(music.duration) && music.duration > 8) {
+          music.currentTime = Math.max(0, music.duration - 8);
+        } else {
+          music.currentTime = 0;
         }
+        music.play().catch(() => { });
+        clearTimeout(musicStopTimer);
         musicStopTimer = setTimeout(() => {
           music.pause();
           stopConfettiTrickle();
-        }, 2000);
-      }, 6000);
+        }, 8000);
+      };
+
+      if (music.readyState >= 1) { // HAVE_METADATA
+        playLast8s();
+      } else {
+        music.addEventListener('loadedmetadata', playLast8s, { once: true });
+        music.load();
+      }
     }
 
     // Show scroll hint after animation settles
