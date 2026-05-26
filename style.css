@@ -847,12 +847,11 @@ html[lang="en"] .card-invite-text {
 
   max-width: var(--card-w);
   width: 100%;
+  height: calc(var(--card-w) * 1.5);
 
   box-shadow:
     0 24px 80px rgba(0, 0, 0, 0.5),
     0 0 0 1px rgba(255, 255, 255, 0.08);
-
-  aspect-ratio: 2 / 3;
 }
 
 .std-card>* {
