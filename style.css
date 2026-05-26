@@ -282,14 +282,6 @@ html[lang="ar"] body {
   letter-spacing: 0;
 }
 
-html[lang="ar"] .aya {
-  left: 0;
-  right: 0;
-  transform: none;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 html[lang="ar"] .std-names {
   font-size: clamp(36px, 14.5cqi, 70px);
   line-height: 1.15;
@@ -817,9 +809,11 @@ html[lang="en"] .card-invite-text {
 .aya {
   position: absolute;
   top: 17%;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 0;
+  right: 0;
   width: 86%;
+  margin-left: auto;
+  margin-right: auto;
   font-family: 'Amiri', serif;
   font-size: clamp(10px, 3.4cqi, 16px);
   font-weight: 600;
@@ -828,7 +822,6 @@ html[lang="en"] .card-invite-text {
   unicode-bidi: isolate;
   text-align: center;
   line-height: 1.8;
-  margin: 0;
   z-index: 2;
 }
 
