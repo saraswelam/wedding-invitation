@@ -278,16 +278,43 @@ html[lang="ar"] .std-names .amp-ornate {
   text-transform: none;
 }
 
+html[lang="ar"] body {
+  letter-spacing: 0;
+}
+
+html[lang="ar"] .aya {
+  left: 0;
+  right: 0;
+  transform: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 html[lang="ar"] .std-names {
-  font-size: clamp(48px, 9vw, 76px);
-  line-height: 1.35;
-  padding-block: 0.05em;
+  font-size: clamp(44px, 8.5vw, 70px);
+  line-height: 1.15;
+  padding-block: 0;
   color: #c9a157;
   text-shadow:
     0 1px 0 rgba(255, 240, 200, 0.55),
     1px 1px 0 #8a6a2b,
     2px 3px 5px rgba(0, 0, 0, 0.28);
-  top: 41%;
+  top: 38%;
+}
+
+html[lang="ar"] .click-label {
+  letter-spacing: 0;
+  text-transform: none;
+  font-family: 'Amiri', serif;
+}
+
+html[lang="ar"] .std-date,
+html[lang="ar"] .std-time,
+html[lang="ar"] .std-formal,
+html[lang="ar"] .mosque-title,
+html[lang="ar"] .hall-name {
+  font-family: 'Amiri', serif;
+  letter-spacing: 0;
 }
 
 html[lang="ar"] .std-eyebrow {
@@ -798,6 +825,7 @@ html[lang="en"] .card-invite-text {
   font-weight: 600;
   color: var(--teal-deep);
   direction: rtl;
+  unicode-bidi: isolate;
   text-align: center;
   line-height: 1.8;
   margin: 0;
@@ -902,7 +930,7 @@ html[lang="en"] .card-invite-text {
 
 .std-names {
   position: absolute;
-  top: 39%;
+  top: 41%;
   left: 0;
   width: 100%;
   text-align: center;
@@ -917,7 +945,7 @@ html[lang="en"] .card-invite-text {
     0 1px 0 rgba(255, 240, 200, 0.55),
     1px 1px 0 #8a6a2b,
     2px 3px 5px rgba(0, 0, 0, 0.28);
-  line-height: 1.02;
+  line-height: 0.85;
   margin: 0;
   z-index: 2;
 }
@@ -940,10 +968,18 @@ html[lang="en"] .card-invite-text {
 .std-names .amp-ornate {
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.1em;
-  font-style: italic;
+  font-style: normal;
   font-weight: 300;
-  color: var(--teal-deep);
-  padding: 0 6px;
+  color: inherit;
+  padding: 0 4px 0 0;
+}
+
+html[lang="en"] .std-names {
+  font-family: 'Cormorant Garamond', serif;
+  color: var(--teal-primary);
+  text-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.65),
+    0 3px 8px rgba(18, 42, 62, 0.18);
 }
 
 .std-getting-married {
@@ -1032,21 +1068,10 @@ html[lang="en"] .card-invite-text {
 }
 
 html[lang="ar"] .venue-block {
-  align-items: flex-end; /* flush left in RTL */
+  align-items: flex-end;
   text-align: right;
-  left: 36%;
-}
-
-html[lang="ar"] .std-date {
-  flex: 1;
-  text-align: left;
-}
-html[lang="ar"] .std-time {
-  flex: 1;
-  text-align: right;
-}
-html[lang="ar"] .std-separator {
-  flex: 0 0 auto;
+  left: 38%;
+  right: auto;
 }
 
 .std-date {

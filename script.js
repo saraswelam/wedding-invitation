@@ -20,7 +20,9 @@ function toggleEnvelope() {
     scene.classList.add('opened');
     spawnConfetti();
     startConfettiTrickle();
-    label.textContent = 'TAP TO CLOSE';
+    
+    const isArabic = document.documentElement.lang === 'ar';
+    label.textContent = isArabic ? 'اضغط للإغلاق' : 'TAP TO CLOSE';
     label.classList.remove('hidden');
 
     // 🎵 play music: 6s from start, then jump to last 2s, then stop (audio + petals)
@@ -55,7 +57,9 @@ function toggleEnvelope() {
     envelopeOpened = false;
     scene.classList.remove('opened');
     stopConfettiTrickle();
-    label.textContent = 'TAP TO OPEN';
+    
+    const isArabic = document.documentElement.lang === 'ar';
+    label.textContent = isArabic ? 'اضغط للفتح' : 'TAP TO OPEN';
     label.classList.remove('hidden');
     scrollHint.style.display = 'none';
 
@@ -148,6 +152,13 @@ function stopConfettiTrickle() {
  * Updates the DOM once per minute.
  */
 const WEDDING_AT = new Date('2026-07-11T18:00:00').getTime();
+const AR_DIGITS = '٠١٢٣٤٥٦٧٨٩';
+function formatNum(n) {
+  const s = String(n);
+  return document.documentElement.lang === 'ar'
+    ? s.replace(/\d/g, d => AR_DIGITS[d])
+    : s;
+}
 function initCountdown() {
   const dEl = document.getElementById('cd-days');
   const hEl = document.getElementById('cd-hours');
@@ -156,14 +167,14 @@ function initCountdown() {
   function tick() {
     const diff = WEDDING_AT - Date.now();
     if (diff <= 0) {
-      dEl.textContent = '0';
-      hEl.textContent = '0';
-      mEl.textContent = '0';
+      dEl.textContent = formatNum(0);
+      hEl.textContent = formatNum(0);
+      mEl.textContent = formatNum(0);
       return;
     }
-    dEl.textContent = Math.floor(diff / 86400000);
-    hEl.textContent = Math.floor((diff / 3600000) % 24);
-    mEl.textContent = Math.floor((diff / 60000) % 60);
+    dEl.textContent = formatNum(Math.floor(diff / 86400000));
+    hEl.textContent = formatNum(Math.floor((diff / 3600000) % 24));
+    mEl.textContent = formatNum(Math.floor((diff / 60000) % 60));
   }
   tick();
   setInterval(tick, 60 * 1000);
